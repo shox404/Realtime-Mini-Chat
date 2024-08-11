@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/libs/tailwind-all.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Chat</title>
+  </head>
+  <body class="flex justify-center mt-4">
+    <div>
+      <div class="box p-3 flex justify-between">
+        <input
+          type="text"
+          id="username"
+          placeholder="What's your name ?"
+          class="w-8/12 rounded-full p-3"
+        />
+        <button
+          onclick="saveName()"
+          class="w-4/12 rounded-full flex justify-center p-3 ml-2"
+        >
+          Set Name
+        </button>
+      </div>
+      <div class="box chat-box mt-3 relative">
+        <div class="text-3xl p-3 flex align-middle">
+          <img src="/assets/logo.png" class="w-8 h-8 m-1" />
+          <h1 class="ml-3">Chat</h1>
+        </div>
+        <div id="block" class="block w-full p-3 relative"></div>
+        <div class="line flex justify-between absolute bottom-0 p-3 w-full">
+          <input
+            type="text"
+            id="input"
+            placeholder="Message"
+            class="w-8/12 rounded-full p-3"
+          />
+          <button
+            onclick="sendMessage()"
+            class="w-4/12 rounded-full flex justify-center p-3 ml-2"
+          >
+            Send
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/libs/socket.io.js"></script>
+    <script src="/libs/moment.js"></script>
+    <script src="/main.js"></script>
+  </body>
+</html>
